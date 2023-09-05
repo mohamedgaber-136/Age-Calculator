@@ -1,0 +1,329 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --Purple-: hsl(259, 100%, 65%);
+  --Light-red-: hsl(0, 100%, 67%);
+  --White: hsl(0, 0%, 100%);
+  --Off-white: hsl(0, 0%, 94%);
+  --Light-grey: hsl(0, 0%, 86%);
+  --Smokey-grey: hsl(0, 1%, 44%);
+  --Off-black: hsl(0, 0%, 8%);
+  --primary-font: "Poppins", sans-serif;
+  --input-fnt-size: 32px;
+}
+@font-face {
+  src: url(assets/fonts/Poppins-Bold.ttf);
+  font-family: main-font;
+}
+.all_{
+  position: absolute;
+  display: none;
+  left: 50%;
+  top: -5%;
+}
+body {
+  font-family: var(--primary-font);
+  /* overflow: hidden; */
+  position: relative;
+}
+label {
+  color: var(--Smokey-grey);
+  text-transform: uppercase;
+}
+input {
+  font-size: var(--input-fnt-size);
+  font-weight: 900;
+}
+p {
+  margin: 0;
+}
+.container {
+  border-radius: 25px 25px 75px 25px;
+  height: 400px;
+  width: 300px;
+  overflow: hidden;
+  position: relative;
+}
+.upper {
+  position: relative;
+  height: 40%;
+  border-bottom: 1px solid var(--Light-grey);
+}
+input {
+  font-size: 25px;
+}
+
+button {
+  background-color: var(--Purple-);
+  position: absolute;
+  bottom: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  cursor: pointer;
+}
+.down {
+  font-size: var(--input-fnt-size);
+  font-weight: 900;
+  height: 65%;
+}
+span {
+  color: var(--Purple-);
+  letter-spacing: 5px;
+}
+.icons_container {
+  position: fixed;
+  background-color: rgba(220, 220, 220, 0.9);
+  width: 100px;
+  border-radius: 10px;
+  padding: 0 5px;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  height: 25px;
+}
+/* validation  */
+.shakes {
+  animation: shake 0.08s linear 1 backwards;
+}
+@keyframes shake {
+  0% {
+    transform: translateX(-6px);
+  }
+  100% {
+    transform: translateX(6px);
+  }
+}
+.unvalid_label {
+  color: red !important;
+}
+.uvalid_input {
+  border: red 1px solid !important;
+  position: relative;
+  text-decoration: line-through;
+}
+.unvalid_ {
+  color: red;
+  font-size: 8px;
+  letter-spacing: 1px;
+  position: relative;
+  left: 2px;
+  margin-top: 5px;
+  font-weight: 600;
+}
+@media (min-width: 320px) {
+    .container {
+      width: 300px;
+    }
+  }
+  @media (min-width: 767px) {
+    .container {
+      width: 500px;
+      padding: 30px;
+    }
+    button {
+      left: 90%;
+      transform: none;
+    }
+  }
+  #happyBirthDay{
+    width: 150px ;
+    height: 150px;
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    transform: translate(-50%,-50%);
+    border-radius: 50%;
+  }
+  #happyBirthDayTwo{
+    width: 150px ;
+    height: 150px;
+    border-radius: 50%;
+    position: absolute;
+    top: 25%;
+    transform: translate(-50%,-50%);
+    right: 15%;
+  }
+  @keyframes firework {
+    
+    0% { 
+      width: 1.5vmin;
+      opacity: 1;
+    }
+    100% { 
+      width: 45vmin; 
+      opacity: 0; 
+    }
+  }
+  
+  .firework,
+  .firework::before,
+  .firework::after {
+    /* --top: 60vh; */
+    content: "";
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 0px;
+    aspect-ratio: 1;
+    background:
+      /* random backgrounds */
+      radial-gradient(circle, rgb(255, 0, 0) 0.2vmin, #0000 0) 50% 00%,
+      radial-gradient(circle, #00f 0.3vmin, #0000 0) 00% 50%,
+      radial-gradient(circle, #0f0 0.5vmin, #0000 0) 50% 99%,
+      radial-gradient(circle, #f4f0 0.2vmin, #0000 0) 99% 50%,
+      radial-gradient(circle, #f1f1f0.3vmin, #0000 0) 80% 90%,
+      radial-gradient(circle, rgb(18, 28, 160) 0.5vmin, #0000 0) 95% 90%,
+      radial-gradient(circle, rgb(120,155,12) 0.5vmin, #0000 0) 10% 60%,
+      radial-gradient(circle, rgb(220,100,150) 0.2vmin, #0000 0) 31% 80%,
+      radial-gradient(circle, rgb(73, 1, 61) 0.3vmin, #0000 0) 80% 10%,
+      radial-gradient(circle, #ff0 0.2vmin, #0000 0) 90% 23%,
+      radial-gradient(circle, rgb(0, 255, 55) 0.3vmin, #0000 0) 45% 20%,
+      radial-gradient(circle, #ff0 1.5vmin, #0000 0) 13% 24%
+      ;
+    background-size: 0.5vmin 0.5vmin;
+    background-repeat: no-repeat;
+    animation: firework 0.5s infinite;
+  }
+  
+  .firework::before {
+    transform: translate(-50%, -50%) rotate(25deg) !important; 
+  }
+  
+  .firework::after {
+    transform: translate(-50%, -50%) rotate(-37deg) !important;
+  }
+  #happyBirthDayTwo,#firework,#happyBirthDay{
+    display: none;
+  }
+  #cake {
+    display: block;
+    position: relative;
+    margin: -10em auto 0 auto;
+  }
+  
+  /* ============================================== Candle
+  */
+  .velas {
+    background: #ffffff;
+    border-radius: 10px;
+    position: absolute;
+    top: 228px;
+    left: 50%;
+    margin-left: -2.4px;
+    margin-top: -8.33333333px;
+    width: 5px;
+    height: 35px;
+    transform: translateY(-300px);
+    -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+    -webkit-animation: in 500ms 6s ease-out forwards;
+            animation: in 500ms 6s ease-out forwards;
+  }
+  
+  .velas:after,
+  .velas:before {
+    background: rgba(255, 0, 0, 0.4);
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2.22222222px;
+  }
+  
+  .velas:after {
+    top: 25%;
+    left: 0;
+  }
+  
+  .velas:before {
+    top: 45%;
+    left: 0;
+  }
+  
+  /* ============================================== Fire
+  */
+  .fuego {
+    border-radius: 100%;
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    margin-left: -2.6px;
+    width: 6.66666667px;
+    height: 18px;
+  }
+  
+  .fuego:nth-child(1) {
+    -webkit-animation: fuego 2s 6.5s infinite;
+            animation: fuego 2s 6.5s infinite;
+  }
+  
+  .fuego:nth-child(2) {
+    -webkit-animation: fuego 1.5s 6.5s infinite;
+            animation: fuego 1.5s 6.5s infinite;
+  }
+  
+  .fuego:nth-child(3) {
+    -webkit-animation: fuego 1s 6.5s infinite;
+            animation: fuego 1s 6.5s infinite;
+  }
+  
+  .fuego:nth-child(4) {
+    -webkit-animation: fuego 0.5s 6.5s infinite;
+            animation: fuego 0.5s 6.5s infinite;
+  }
+  
+  .fuego:nth-child(5) {
+    -webkit-animation: fuego 0.2s 6.5s infinite;
+            animation: fuego 0.2s 6.5s infinite;
+  }
+  
+  /* ============================================== Animation Fire
+  */
+  @-webkit-keyframes fuego {
+    0%, 100% {
+      background: rgba(254, 128, 97, 0.5);
+      box-shadow: 0 0 40px 10px rgba(248, 233, 209, 0.2);
+      transform: translateY(0) scale(1);
+    }
+    50% {
+      background: rgba(255, 50, 0, 0.1);
+      box-shadow: 0 0 40px 20px rgba(248, 233, 209, 0.2);
+      transform: translateY(-20px) scale(0);
+    }
+  }
+  @keyframes fuego {
+    0%, 100% {
+      background: rgba(254, 248, 97, 0.5);
+      box-shadow: 0 0 40px 10px rgba(248, 233, 209, 0.2);
+      transform: translateY(0) scale(1);
+    }
+    50% {
+      background: rgba(255, 50, 0, 0.1);
+      box-shadow: 0 0 40px 20px rgba(248, 233, 209, 0.2);
+      transform: translateY(-20px) scale(0);
+    }
+  }
+  @-webkit-keyframes in {
+    to {
+      transform: translateY(0);
+    }
+  }
+  @keyframes in {
+    to {
+      transform: translateY(0);
+    }
+  }
+  .text {
+    color: #8b6a60;
+    font-family: "Lato", sans-serif;
+    font-weight: 300;
+    font-style: italic;
+    text-align: center;
+  }
+  .text h1 {
+    font-size: 1.4em;
+  }
